@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "denon run -A main.ts"
+    "dev": "denon run -A main.ts",
+    "start": "deno run -A main.ts"
   },
   "keywords": [],
   "author": "",
