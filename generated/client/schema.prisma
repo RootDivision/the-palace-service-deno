@@ -8,11 +8,11 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+  provider  = "mongodb"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Release {
-  id          Int @id @map("_id")
-  instance_id Int
+  id Int @id @map("_id")
 }

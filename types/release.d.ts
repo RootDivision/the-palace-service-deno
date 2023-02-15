@@ -1,4 +1,3 @@
-declare type Release = {
+export interface Release {
   id: number;
-  instance_id: number;
-};
+}

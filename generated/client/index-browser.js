@@ -90,8 +90,7 @@ Prisma.NullTypes = {
 function makeEnum(x) { return x; }
 
 exports.Prisma.ReleaseScalarFieldEnum = makeEnum({
-  id: 'id',
-  instance_id: 'instance_id'
+  id: 'id'
 });
 
 exports.Prisma.SortOrder = makeEnum({

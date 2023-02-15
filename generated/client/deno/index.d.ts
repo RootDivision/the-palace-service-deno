@@ -16,7 +16,6 @@ type UnwrapTuple<Tuple extends readonly unknown[]> = {
  */
 export type Release = {
   id: number
-  instance_id: number
 }
 
 
@@ -765,54 +764,44 @@ export namespace Prisma {
 
   export type ReleaseAvgAggregateOutputType = {
     id: number | null
-    instance_id: number | null
   }
 
   export type ReleaseSumAggregateOutputType = {
     id: number | null
-    instance_id: number | null
   }
 
   export type ReleaseMinAggregateOutputType = {
     id: number | null
-    instance_id: number | null
   }
 
   export type ReleaseMaxAggregateOutputType = {
     id: number | null
-    instance_id: number | null
   }
 
   export type ReleaseCountAggregateOutputType = {
     id: number
-    instance_id: number
     _all: number
   }
 
 
   export type ReleaseAvgAggregateInputType = {
     id?: true
-    instance_id?: true
   }
 
   export type ReleaseSumAggregateInputType = {
     id?: true
-    instance_id?: true
   }
 
   export type ReleaseMinAggregateInputType = {
     id?: true
-    instance_id?: true
   }
 
   export type ReleaseMaxAggregateInputType = {
     id?: true
-    instance_id?: true
   }
 
   export type ReleaseCountAggregateInputType = {
     id?: true
-    instance_id?: true
     _all?: true
   }
 
@@ -905,7 +894,6 @@ export namespace Prisma {
 
   export type ReleaseGroupByOutputType = {
     id: number
-    instance_id: number
     _count: ReleaseCountAggregateOutputType | null
     _avg: ReleaseAvgAggregateOutputType | null
     _sum: ReleaseSumAggregateOutputType | null
@@ -929,7 +917,6 @@ export namespace Prisma {
 
   export type ReleaseSelect = {
     id?: boolean
-    instance_id?: boolean
   }
 
 
@@ -1143,27 +1130,6 @@ export namespace Prisma {
     updateMany<T extends ReleaseUpdateManyArgs>(
       args: SelectSubset<T, ReleaseUpdateManyArgs>
     ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one Release.
-     * @param {ReleaseUpsertArgs} args - Arguments to update or create a Release.
-     * @example
-     * // Update or create a Release
-     * const release = await prisma.release.upsert({
-     *   create: {
-     *     // ... data to create a Release
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Release we want to update
-     *   }
-     * })
-    **/
-    upsert<T extends ReleaseUpsertArgs>(
-      args: SelectSubset<T, ReleaseUpsertArgs>
-    ): Prisma__ReleaseClient<ReleaseGetPayload<T>>
 
     /**
      * Find zero or more Releases that matches the filter.
@@ -1612,29 +1578,6 @@ export namespace Prisma {
 
 
   /**
-   * Release upsert
-   */
-  export type ReleaseUpsertArgs = {
-    /**
-     * Select specific fields to fetch from the Release
-     */
-    select?: ReleaseSelect | null
-    /**
-     * The filter to search for the Release to update in case it exists.
-     */
-    where: ReleaseWhereUniqueInput
-    /**
-     * In case the Release found by the `where` argument doesn't exist, create a new Release with this data.
-     */
-    create: XOR<ReleaseCreateInput, ReleaseUncheckedCreateInput>
-    /**
-     * In case the Release was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<ReleaseUpdateInput, ReleaseUncheckedUpdateInput>
-  }
-
-
-  /**
    * Release delete
    */
   export type ReleaseDeleteArgs = {
@@ -1710,8 +1653,7 @@ export namespace Prisma {
   // https://github.com/microsoft/TypeScript/issues/3192#issuecomment-261720275
 
   export const ReleaseScalarFieldEnum: {
-    id: 'id',
-    instance_id: 'instance_id'
+    id: 'id'
   };
 
   export type ReleaseScalarFieldEnum = (typeof ReleaseScalarFieldEnum)[keyof typeof ReleaseScalarFieldEnum]
@@ -1735,12 +1677,10 @@ export namespace Prisma {
     OR?: Enumerable<ReleaseWhereInput>
     NOT?: Enumerable<ReleaseWhereInput>
     id?: IntFilter | number
-    instance_id?: IntFilter | number
   }
 
   export type ReleaseOrderByWithRelationInput = {
     id?: SortOrder
-    instance_id?: SortOrder
   }
 
   export type ReleaseWhereUniqueInput = {
@@ -1749,7 +1689,6 @@ export namespace Prisma {
 
   export type ReleaseOrderByWithAggregationInput = {
     id?: SortOrder
-    instance_id?: SortOrder
     _count?: ReleaseCountOrderByAggregateInput
     _avg?: ReleaseAvgOrderByAggregateInput
     _max?: ReleaseMaxOrderByAggregateInput
@@ -1762,38 +1701,34 @@ export namespace Prisma {
     OR?: Enumerable<ReleaseScalarWhereWithAggregatesInput>
     NOT?: Enumerable<ReleaseScalarWhereWithAggregatesInput>
     id?: IntWithAggregatesFilter | number
-    instance_id?: IntWithAggregatesFilter | number
   }
 
   export type ReleaseCreateInput = {
     id: number
-    instance_id: number
   }
 
   export type ReleaseUncheckedCreateInput = {
     id: number
-    instance_id: number
-  }
-
-  export type ReleaseUpdateInput = {
-    instance_id?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type ReleaseUncheckedUpdateInput = {
-    instance_id?: IntFieldUpdateOperationsInput | number
   }
 
   export type ReleaseCreateManyInput = {
     id: number
-    instance_id: number
+  }
+
+  export type ReleaseUpdateInput = {
+
+  }
+
+  export type ReleaseUncheckedUpdateInput = {
+
   }
 
   export type ReleaseUpdateManyMutationInput = {
-    instance_id?: IntFieldUpdateOperationsInput | number
+
   }
 
   export type ReleaseUncheckedUpdateManyInput = {
-    instance_id?: IntFieldUpdateOperationsInput | number
+
   }
 
   export type IntFilter = {
@@ -1809,27 +1744,22 @@ export namespace Prisma {
 
   export type ReleaseCountOrderByAggregateInput = {
     id?: SortOrder
-    instance_id?: SortOrder
   }
 
   export type ReleaseAvgOrderByAggregateInput = {
     id?: SortOrder
-    instance_id?: SortOrder
   }
 
   export type ReleaseMaxOrderByAggregateInput = {
     id?: SortOrder
-    instance_id?: SortOrder
   }
 
   export type ReleaseMinOrderByAggregateInput = {
     id?: SortOrder
-    instance_id?: SortOrder
   }
 
   export type ReleaseSumOrderByAggregateInput = {
     id?: SortOrder
-    instance_id?: SortOrder
   }
 
   export type IntWithAggregatesFilter = {
@@ -1846,14 +1776,6 @@ export namespace Prisma {
     _sum?: NestedIntFilter
     _min?: NestedIntFilter
     _max?: NestedIntFilter
-  }
-
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
   }
 
   export type NestedIntFilter = {
